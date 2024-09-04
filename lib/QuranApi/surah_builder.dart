@@ -186,6 +186,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
                                         color: qurantext,
                                       ),
                                       itemBuilder: (context) => [
+                                        //Bookmark
                                         PopupMenuItem(
                                           onTap: () {
                                             setState(() {
@@ -272,6 +273,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
                                             ],
                                           ),
                                         ),
+                                        //Copy
                                         PopupMenuItem(
                                           onTap: () {
                                             setState(() {
@@ -372,6 +374,7 @@ class _SurahBuilderState extends State<SurahBuilder> {
                                             ],
                                           ),
                                         ),
+                                        //Share
                                         PopupMenuItem(
                                           onTap: () {
                                             setState(
@@ -818,44 +821,22 @@ class _SurahBuilderState extends State<SurahBuilder> {
                                 const SizedBox(
                                   height: 8,
                                 ),
-                                SizedBox(
-                                  child: Stack(
-                                    children: [
-                                      Center(
-                                        child: Image.asset(
-                                          quranback == Colors.black
-                                              ? "assets/images/ayablack.jpg"
-                                              : "assets/images/ayawhite.jpg",
-                                        ),
-                                      ),
-                                      Center(
-                                        child: Text(
-                                          suraName,
-                                          style: TextStyle(
-                                            fontSize: 12,
-                                            fontFamily: 'KFGQPC',
-                                            wordSpacing: -2,
-                                            letterSpacing: 0,
-                                            height: 2,
-                                            color: qurantext,
-                                          ),
-                                        ),
-                                      )
-                                    ],
+                                Center(
+                                  child: Text(
+                                    suraName,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontFamily: 'KFGQPC',
+                                      wordSpacing: -2,
+                                      letterSpacing: 0,
+                                      fontWeight: FontWeight.bold,
+                                      height: 2,
+                                      color: qurantext,
+                                    ),
                                   ),
                                 ),
                                 const SizedBox(
                                   height: 8,
-                                ),
-                                Visibility(
-                                  visible: suraName == "سُورَةُ التَّوۡبَةِ"
-                                      ? false
-                                      : true,
-                                  child: Image.asset(
-                                    'assets/images/pngegg (1).png',
-                                    height: 24,
-                                    color: qurantext,
-                                  ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
