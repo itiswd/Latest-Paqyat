@@ -467,10 +467,11 @@ class _AzzkarState extends State<Azzkar> {
                                 },
                                 child: Card(
                                   color: itemColor,
-                                  margin: const EdgeInsets.only(
+                                  margin: EdgeInsets.only(
                                     top: 4,
                                     right: 8,
                                     left: 8,
+                                    bottom: index == 131 ? 72 : 0,
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(16.0),
@@ -489,9 +490,6 @@ class _AzzkarState extends State<Azzkar> {
                               );
                             },
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
                         ),
                       ],
                     ),

@@ -291,8 +291,8 @@ class _SabahState extends State<Sabah> {
                             child: Card(
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(4),
-                                  topRight: Radius.circular(4),
+                                  topLeft: Radius.circular(12),
+                                  topRight: Radius.circular(12),
                                   bottomRight: Radius.circular(24),
                                   bottomLeft: Radius.circular(24),
                                 ),
