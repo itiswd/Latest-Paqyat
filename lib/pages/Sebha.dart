@@ -481,9 +481,7 @@ class _SebhaState extends State<Sebha> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
+                const SizedBox(width: 10),
                 Container(
                   height: MediaQuery.of(context).size.width / 4,
                   decoration: BoxDecoration(
@@ -519,9 +517,7 @@ class _SebhaState extends State<Sebha> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
+                const SizedBox(width: 10),
                 Container(
                   height: MediaQuery.of(context).size.width / 4,
                   decoration: BoxDecoration(
@@ -560,6 +556,7 @@ class _SebhaState extends State<Sebha> {
               ],
             ),
           ),
+          const SizedBox(height: 64),
         ],
       ),
     );
