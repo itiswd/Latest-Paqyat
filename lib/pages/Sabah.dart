@@ -372,7 +372,7 @@ class _SabahState extends State<Sabah> {
                                                             color: Colors.white
                                                                 .withOpacity(
                                                                     0.8),
-                                                            height: 2,
+                                                            height: 1.5,
                                                             fontFamily:
                                                                 'Amiri-Regular',
                                                             wordSpacing: 0,

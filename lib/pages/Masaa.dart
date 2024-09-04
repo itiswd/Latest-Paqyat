@@ -350,6 +350,7 @@ class _MasaaState extends State<Masaa> {
                                                     const BouncingScrollPhysics(),
                                                 child: Column(
                                                   children: [
+                                                    //Zekr
                                                     Text(
                                                       '${masaaitems['masaaitems'][ncounterr]["zekr"]}',
                                                       textAlign:
@@ -361,117 +362,57 @@ class _MasaaState extends State<Masaa> {
                                                         fontSize: tSize,
                                                       ),
                                                     ),
-                                                    Visibility(
-                                                        visible: masaaitems['masaaitems']
-                                                                            [
-                                                                            ncounterr]
-                                                                        [
-                                                                        "reference"] ==
-                                                                    "" &&
-                                                                masaaitems['masaaitems']
-                                                                            [
-                                                                            ncounterr]
-                                                                        [
-                                                                        "description"] ==
-                                                                    ""
-                                                            ? false
-                                                            : true,
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Divider(
-                                                              height: 16,
-                                                              endIndent: 24,
-                                                              indent: 24,
-                                                              color: Colors
-                                                                  .white
-                                                                  .withOpacity(
-                                                                      0.3),
-                                                            ),
-                                                            Visibility(
-                                                              visible: masaaitems['masaaitems']
-                                                                              [
-                                                                              ncounterr]
-                                                                          [
-                                                                          "description"] ==
-                                                                      ""
-                                                                  ? false
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                        .symmetric(
-                                                                  horizontal: 8,
-                                                                ),
-                                                                child: Text(
-                                                                  '${masaaitems['masaaitems'][ncounterr]["description"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .white
-                                                                        .withOpacity(
-                                                                            0.8),
-                                                                    height: 2,
-                                                                    fontFamily:
-                                                                        'Amiri-Regular',
-                                                                    wordSpacing:
-                                                                        0,
-                                                                    fontSize:
-                                                                        tSize /
-                                                                            1.2,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Visibility(
-                                                              visible: masaaitems['masaaitems']
-                                                                              [
-                                                                              ncounterr]
-                                                                          [
-                                                                          "reference"] ==
-                                                                      ""
-                                                                  ? false
-                                                                  : true,
-                                                              child: Row(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .center,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding:
-                                                                        const EdgeInsets
-                                                                            .all(
-                                                                            8),
-                                                                    child: Text(
-                                                                      '${masaaitems['masaaitems'][ncounterr]["reference"]}',
-                                                                      textAlign:
-                                                                          TextAlign
-                                                                              .right,
-                                                                      style:
-                                                                          TextStyle(
-                                                                        color: Colors
-                                                                            .yellow
-                                                                            .withOpacity(0.8),
-                                                                        fontFamily:
-                                                                            'Amiri-Regular',
-                                                                        wordSpacing:
-                                                                            0,
-                                                                        fontSize:
-                                                                            tSize /
-                                                                                1.5,
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ))
+                                                    if (masaaitems['masaaitems']
+                                                                [ncounterr]
+                                                            ["description"] !=
+                                                        "")
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                          horizontal: 8,
+                                                        ),
+                                                        child: Text(
+                                                          '${masaaitems['masaaitems'][ncounterr]["description"]}',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            color: Colors.white
+                                                                .withOpacity(
+                                                                    0.8),
+                                                            height: 1.5,
+                                                            fontFamily:
+                                                                'Amiri-Regular',
+                                                            wordSpacing: 0,
+                                                            fontSize:
+                                                                tSize / 1.2,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (masaaitems['masaaitems']
+                                                                [ncounterr]
+                                                            ["reference"] !=
+                                                        "")
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8),
+                                                        child: Text(
+                                                          '${masaaitems['masaaitems'][ncounterr]["reference"]}',
+                                                          textAlign:
+                                                              TextAlign.right,
+                                                          style: TextStyle(
+                                                            color: Colors.yellow
+                                                                .withOpacity(
+                                                                    0.8),
+                                                            fontFamily:
+                                                                'Amiri-Regular',
+                                                            wordSpacing: 0,
+                                                            fontSize:
+                                                                tSize / 1.5,
+                                                          ),
+                                                        ),
+                                                      ),
                                                   ],
                                                 ),
                                               ),
@@ -590,7 +531,7 @@ class _MasaaState extends State<Masaa> {
                     ),
                   ),
                   const SizedBox(
-                    height: 32,
+                    height: 82,
                   ),
                 ],
               ),
