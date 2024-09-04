@@ -466,7 +466,7 @@ class _AzzkarState extends State<Azzkar> {
                                   });
                                 },
                                 child: Card(
-                                  color: itemColor,
+                                  color: itemColor!.withOpacity(0.5),
                                   margin: EdgeInsets.only(
                                     top: 4,
                                     right: 8,

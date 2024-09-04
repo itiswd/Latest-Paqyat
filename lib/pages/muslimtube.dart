@@ -293,7 +293,7 @@ class _MuslimState extends State<Muslim> {
                   ],
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: 100,
                 ),
               ],
             ),

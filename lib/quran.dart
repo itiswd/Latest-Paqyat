@@ -295,6 +295,7 @@ class _QrrrState extends State<Qrrr> {
                 right: 0.0,
                 child: Container(
                   margin: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   decoration: BoxDecoration(
                     color: itemColor!,
                     borderRadius: BorderRadius.circular(64.0),
