@@ -428,7 +428,7 @@ class _QrrrState extends State<Qrrr> {
           ? newMethodAudioplayer(context)
           : Padding(
               padding: const EdgeInsets.only(
-                bottom: 20,
+                bottom: 68.0,
               ),
               child: newMethodaudioIcon(),
             ),
@@ -1878,7 +1878,7 @@ class _QrrrState extends State<Qrrr> {
       child: SizedBox(
         height: MediaQuery.of(context).size.height -
             MediaQuery.of(context).padding.top -
-            108,
+            58,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: ImageFiltered(
@@ -1890,11 +1890,11 @@ class _QrrrState extends State<Qrrr> {
               color: Colors.white,
               height: MediaQuery.of(context).size.height -
                   MediaQuery.of(context).padding.top -
-                  124,
+                  62,
               child: Padding(
                 padding: const EdgeInsets.only(
                   top: 8,
-                  bottom: 54,
+                  bottom: 80,
                 ),
                 child: CachedNetworkImage(
                   imageUrl: url1,
