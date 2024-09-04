@@ -268,105 +268,86 @@ class _QrrrState extends State<Qrrr> {
         body: SizedBox(
           child: Stack(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 48,
-                ),
-                child: PageView(
-                  physics: const BouncingScrollPhysics(),
-                  controller: homee,
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    quranScaffold(context),
-                    const Sabah(),
-                    const Masaa(),
-                    const Azzkar(),
-                    const Sebha(),
-                    const SalahT(),
-                    const Muslim(),
-                    const IndexPage(),
-                  ],
-                ),
+              Column(
+                children: [
+                  Expanded(
+                    child: PageView(
+                      physics: const BouncingScrollPhysics(),
+                      controller: homee,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        quranScaffold(context),
+                        const Sabah(),
+                        const Masaa(),
+                        const Azzkar(),
+                        const Sebha(),
+                        const SalahT(),
+                        const Muslim(),
+                        const IndexPage(),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Positioned(
-                bottom: 0,
+                bottom: 0.0,
+                left: 0.0,
+                right: 0.0,
                 child: Container(
+                  margin: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                      color: itemColor!,
-                      borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(24),
-                        topLeft: Radius.circular(24),
-                      )),
+                    color: itemColor!,
+                    borderRadius: BorderRadius.circular(64.0),
+                  ),
                   width: MediaQuery.of(context).size.width,
-                  height: 80,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                    ),
-                    child: Center(
-                      child: FadeInUp(
-                        duration: const Duration(
-                          milliseconds: 500,
+                  height: 72,
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        bottomAppBar(
+                          mah == 0
+                              ? FlutterIslamicIcons.quran
+                              : FlutterIslamicIcons.quran2,
+                          mah == 0 ? Colors.redAccent : Colors.amber,
+                          0,
                         ),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          physics: const BouncingScrollPhysics(),
-                          child: Row(
-                            children: [
-                              bottomAppBar(
-                                mah == 0
-                                    ? FlutterIslamicIcons.quran
-                                    : FlutterIslamicIcons.quran2,
-                                mah == 0 ? Colors.redAccent : Colors.amber,
-                                mah == 0 ? 'مصحف\nالمدينة' : 'تدبر و عمل',
-                                0,
-                              ),
-                              bottomAppBar(
-                                Icons.book,
-                                Colors.brown,
-                                'بدون نت',
-                                7,
-                              ),
-                              bottomAppBar(
-                                Icons.sunny,
-                                Colors.yellow,
-                                "الصباح",
-                                1,
-                              ),
-                              bottomAppBar(
-                                Icons.nightlight,
-                                Colors.white,
-                                "المساء",
-                                2,
-                              ),
-                              bottomAppBar(
-                                FlutterIslamicIcons.prayer,
-                                Colors.tealAccent,
-                                "أذكار المسلم",
-                                3,
-                              ),
-                              bottomAppBar(
-                                FlutterIslamicIcons.tasbih2,
-                                const Color.fromARGB(255, 220, 97, 53),
-                                "السبحة",
-                                4,
-                              ),
-                              bottomAppBar(
-                                FlutterIslamicIcons.mosque,
-                                Colors.red,
-                                "الصلاة",
-                                5,
-                              ),
-                              bottomAppBar(
-                                Icons.groups,
-                                Colors.blue,
-                                "روابط خير",
-                                6,
-                              ),
-                            ],
-                          ),
+                        bottomAppBar(
+                          Icons.book,
+                          Colors.brown,
+                          7,
                         ),
-                      ),
+                        bottomAppBar(
+                          Icons.sunny,
+                          Colors.yellow,
+                          1,
+                        ),
+                        bottomAppBar(
+                          Icons.nightlight,
+                          Colors.white,
+                          2,
+                        ),
+                        bottomAppBar(
+                          FlutterIslamicIcons.prayer,
+                          Colors.tealAccent,
+                          3,
+                        ),
+                        bottomAppBar(
+                          FlutterIslamicIcons.tasbih2,
+                          const Color.fromARGB(255, 220, 97, 53),
+                          4,
+                        ),
+                        bottomAppBar(
+                          FlutterIslamicIcons.mosque,
+                          Colors.red,
+                          5,
+                        ),
+                        bottomAppBar(
+                          Icons.groups,
+                          Colors.blue,
+                          6,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -378,16 +359,17 @@ class _QrrrState extends State<Qrrr> {
     );
   }
 
+  int navBarIndex = 0;
   //Bottom appBar
   GestureDetector bottomAppBar(
     IconData barrIcon,
     Color barrColor,
-    String barrText,
     int barrNum,
   ) {
     return GestureDetector(
       onTap: () {
         setState(() {
+          navBarIndex = barrNum;
           if (maxSug == 5) {
             maxSug = 0;
             Future.delayed(
@@ -423,30 +405,16 @@ class _QrrrState extends State<Qrrr> {
       },
       child: Container(
         decoration: BoxDecoration(
-            color: itemColor, borderRadius: BorderRadius.circular(24)),
-        width: (MediaQuery.of(context).size.width - 48) / 8,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              barrIcon,
-              color: barrColor,
-              size: MediaQuery.of(context).size.width / 18,
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              barrText,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                decoration: TextDecoration.none,
-                fontFamily: 'BigVesta-Arabic-Regular',
-                fontSize: MediaQuery.of(context).size.width / 60,
-                color: Colors.white,
-              ),
-            )
-          ],
+          color: navBarIndex == barrNum ? Colors.white.withOpacity(0.1) : null,
+          borderRadius: BorderRadius.circular(48.0),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Icon(
+            barrIcon,
+            color: navBarIndex == barrNum ? Colors.yellow[700] : Colors.white,
+            size: MediaQuery.of(context).size.width / 16,
+          ),
         ),
       ),
     );
