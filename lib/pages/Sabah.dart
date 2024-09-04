@@ -343,6 +343,7 @@ class _SabahState extends State<Sabah> {
                                                     const BouncingScrollPhysics(),
                                                 child: Column(
                                                   children: [
+                                                    //Zekr
                                                     Text(
                                                       '${asab['asab'][ncounterr]["zekr"]}',
                                                       textAlign:
@@ -354,109 +355,55 @@ class _SabahState extends State<Sabah> {
                                                         fontSize: tSize,
                                                       ),
                                                     ),
-                                                    Visibility(
-                                                        visible: asab['asab'][
-                                                                            ncounterr]
-                                                                        [
-                                                                        "reference"] ==
-                                                                    "" &&
-                                                                asab['asab'][
-                                                                            ncounterr]
-                                                                        [
-                                                                        "description"] ==
-                                                                    ""
-                                                            ? false
-                                                            : true,
-                                                        child: Column(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .center,
-                                                          children: [
-                                                            Divider(
-                                                              height: 12,
-                                                              endIndent: 24,
-                                                              indent: 24,
-                                                              color: Colors
-                                                                  .white
-                                                                  .withOpacity(
-                                                                      0.3),
-                                                            ),
-                                                            Visibility(
-                                                              visible: asab['asab']
-                                                                              [
-                                                                              ncounterr]
-                                                                          [
-                                                                          "description"] ==
-                                                                      ""
-                                                                  ? false
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                        .symmetric(
-                                                                  horizontal:
-                                                                      16,
-                                                                ),
-                                                                child: Text(
-                                                                  '${asab['asab'][ncounterr]["description"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .white
-                                                                        .withOpacity(
-                                                                            0.8),
-                                                                    height: 2,
-                                                                    fontFamily:
-                                                                        'Amiri-Regular',
-                                                                    wordSpacing:
-                                                                        0,
-                                                                    fontSize:
-                                                                        tSize /
-                                                                            1.2,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Visibility(
-                                                              visible: asab['asab']
-                                                                              [
-                                                                              ncounterr]
-                                                                          [
-                                                                          "reference"] ==
-                                                                      ""
-                                                                  ? false
-                                                                  : true,
-                                                              child: Padding(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                        .all(8),
-                                                                child: Text(
-                                                                  '${asab['asab'][ncounterr]["reference"]}',
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .yellow
-                                                                        .withOpacity(
-                                                                            0.8),
-                                                                    fontFamily:
-                                                                        'Amiri-Regular',
-                                                                    wordSpacing:
-                                                                        0,
-                                                                    fontSize:
-                                                                        tSize /
-                                                                            1.5,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ))
+                                                    if (asab['asab'][ncounterr]
+                                                            ["description"] !=
+                                                        "")
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .symmetric(
+                                                          horizontal: 16,
+                                                        ),
+                                                        child: Text(
+                                                          '${asab['asab'][ncounterr]["description"]}',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            color: Colors.white
+                                                                .withOpacity(
+                                                                    0.8),
+                                                            height: 2,
+                                                            fontFamily:
+                                                                'Amiri-Regular',
+                                                            wordSpacing: 0,
+                                                            fontSize:
+                                                                tSize / 1.2,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    if (asab['asab'][ncounterr]
+                                                            ["reference"] !=
+                                                        "")
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .all(8),
+                                                        child: Text(
+                                                          '${asab['asab'][ncounterr]["reference"]}',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                            color: Colors.yellow
+                                                                .withOpacity(
+                                                                    0.8),
+                                                            fontFamily:
+                                                                'Amiri-Regular',
+                                                            wordSpacing: 0,
+                                                            fontSize:
+                                                                tSize / 1.5,
+                                                          ),
+                                                        ),
+                                                      ),
                                                   ],
                                                 ),
                                               ),
@@ -574,7 +521,7 @@ class _SabahState extends State<Sabah> {
                     ),
                   ),
                   const SizedBox(
-                    height: 32,
+                    height: 82,
                   ),
                 ],
               ),
