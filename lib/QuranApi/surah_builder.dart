@@ -39,27 +39,39 @@ class SurahBuilder extends StatefulWidget {
 }
 
 class _SurahBuilderState extends State<SurahBuilder> {
-  GlobalKey scaffoldKey = GlobalKey();
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   Uint8List? imageBytes;
 
   //Screen Shots
-  void captureScreenshot() async {
-    RenderRepaintBoundary boundary =
-        scaffoldKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-    ui.Image image = await boundary.toImage(pixelRatio: 5.0);
-    ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-    setState(() {
-      imageBytes = byteData!.buffer.asUint8List();
-    });
-    _saveScreenshot();
+  Future<void> captureScreenshot() async {
+    try {
+      RenderRepaintBoundary boundary = scaffoldKey.currentContext!
+          .findRenderObject() as RenderRepaintBoundary;
+      ui.Image image = await boundary.toImage(pixelRatio: 5.0);
+      ByteData? byteData =
+          await image.toByteData(format: ui.ImageByteFormat.png);
+      setState(() {
+        imageBytes = byteData!.buffer.asUint8List();
+      });
+      _saveScreenshot();
+    } catch (e) {
+      debugPrint('Error capturing screenshot: $e');
+    }
   }
 
-  void _saveScreenshot() async {
-    final directory = await getApplicationDocumentsDirectory();
-    String filePath = '${directory.path}/screenshot.png';
-    File file = File(filePath);
-    await file.writeAsBytes(imageBytes!);
-    await ImageGallerySaver.saveFile(filePath);
+  Future<void> _saveScreenshot() async {
+    try {
+      final directory = await getApplicationDocumentsDirectory();
+      String filePath = '${directory.path}/screenshot.png';
+      File file = File(filePath);
+      await file.writeAsBytes(imageBytes!);
+      await ImageGallerySaver.saveFile(filePath);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Screenshot saved successfully!')),
+      );
+    } catch (e) {
+      print('Error saving screenshot: $e');
+    }
   }
 
   @override

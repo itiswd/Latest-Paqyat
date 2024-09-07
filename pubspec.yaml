@@ -50,9 +50,9 @@ dependencies:
   flutter_audio_waveforms: ^1.2.1+8
   http: ^0.13.5
   scrollable_positioned_list: ^0.3.8
-  image_gallery_saver: ^2.0.2
   path_provider: ^2.0.15
   rename: ^2.1.1
+  image_gallery_saver: ^2.0.3
 
 flutter_native_splash:
   color: "#000000"
