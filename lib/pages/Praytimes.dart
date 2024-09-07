@@ -347,7 +347,7 @@ class _SalahTState extends State<SalahT> {
                                                     pray++) {
                                                   if (value == govves[pray]) {
                                                     prayController
-                                                        .jumpToPage(pray + 1);
+                                                        .jumpToPage(pray);
                                                   }
                                                 }
                                               }),

@@ -1,5 +1,4 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:paqy_yat/quran.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -44,10 +43,6 @@ class _MuslimState extends State<Muslim> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    final paly1 = AudioPlayer();
-                    if (volume == 0) {
-                      paly1.play(AssetSource("sounds/turnpage-99756.mp3"));
-                    }
                     Future.delayed(
                       const Duration(milliseconds: 150),
                       () {
